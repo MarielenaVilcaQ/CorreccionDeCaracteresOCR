@@ -194,7 +194,7 @@ public class Main extends javax.swing.JFrame {
             String text = tesseract.doOCR(new File(textField1.getText())); // Aqui debe ir la imagen procesada , esoty tomando la otra imagen
             jTextArea1.setText(text);
         } catch (TesseractException ex) {
-            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_button3ActionPerformed
 
