@@ -107,6 +107,9 @@
         <Property name="actionCommand" type="java.lang.String" value="Convertir imagen a texto"/>
         <Property name="label" type="java.lang.String" value="Convertir imagen a texto"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="button3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
