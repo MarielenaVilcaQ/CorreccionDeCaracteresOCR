@@ -27,7 +27,7 @@ import org.opencv.core.Size;
  */
 public class OptimizarImagen {
 	// Source path content images
-	static String SRC_PATH = "D:/2019-IISEMESTRE/CALIDAD_DE_SOFTWARE/TEORIA/TF_CorreccionDeCaracteresDeteriorados/ImproveBinarization/src/";
+	static String SRC_PATH = "C:/Users/SYA/Downloads/";
 	
 	// Load OPENCV
 	static {
@@ -47,6 +47,8 @@ public class OptimizarImagen {
 	}
 	
 	public static void main(String[] args) {
+
+                
 		System.out.println("Start recognize text from image");
 		long start = System.currentTimeMillis();
 

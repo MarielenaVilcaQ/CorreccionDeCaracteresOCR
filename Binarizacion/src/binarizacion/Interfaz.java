@@ -14,6 +14,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import net.sourceforge.tess4j.Tesseract;
+import net.sourceforge.tess4j.TesseractException;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import static org.opencv.highgui.Highgui.imread;
@@ -81,6 +83,11 @@ public class Interfaz extends javax.swing.JFrame {
 
         button3.setActionCommand("Convertir imagen a texto");
         button3.setLabel("Convertir imagen a texto");
+        button3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button3ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("jLabel1");
 
@@ -175,6 +182,19 @@ public class Interfaz extends javax.swing.JFrame {
                 getScaledInstance(250, 250, Image.SCALE_DEFAULT));
         jLabel2.setIcon(imageIcon);
     }//GEN-LAST:event_button2ActionPerformed
+
+    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+        Tesseract tesseract = new Tesseract();
+        try {
+            // TODO add your handling code here;
+        
+            tesseract.setDatapath("C:\\Users\\SYA\\Documents\\INGENIERIA DE SISTEMAS\\SEMESTRE VIII\\CAS\\TRABAJO FINAL - OCR\\Tess4J-3.4.8-src\\Tess4J\\tessdata");
+            String text = tesseract.doOCR(new File(textField1.getText())); // Aqui debe ir la imagen procesada , esoty tomando la otra imagen
+            jTextArea1.setText(text);
+        } catch (TesseractException ex) {
+            Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_button3ActionPerformed
 
     /**
      * @param args the command line arguments
